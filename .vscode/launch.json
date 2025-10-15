@@ -5,25 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome",
+            "name": "Python: Flask App",
+            "type": "debugpy",
             "request": "launch",
-            "type": "chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "program": "${workspaceFolder}/app/app.py",
+            "cwd": "${workspaceFolder}/app",
+            "env": {
+                "FLASK_ENV": "development"
+            },
+            "args": [],
+            "jinja": true,
+            "justMyCode": true
         },
         {
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "request": "attach",
+            "name": "Launch Chrome - Flask App",
+            "request": "launch",
             "type": "chrome",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:5000",
+            "webRoot": "${workspaceFolder}/app"
         },
         {
-            "type": "chrome",
+            "name": "Launch Chrome - 127.0.0.1",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "type": "chrome",
+            "url": "http://127.0.0.1:5000",
+            "webRoot": "${workspaceFolder}/app"
         }
     ]
 }
